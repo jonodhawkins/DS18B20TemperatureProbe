@@ -1,0 +1,6 @@
+[submodule "lib/DS18B20"]
+	path = lib/DS18B20
+	url = https://github.com/matmunk/DS18B20
+[submodule "lib/OneWire"]
+	path = lib/OneWire
+	url = https://github.com/PaulStoffregen/OneWire
