@@ -14,16 +14,24 @@
 
 // Init probe object
 DS18B20 ds(PIN_A2);
+uint16_t time;
 
 void setup() {
   Serial.begin(9600);
 }
 
+
 void loop() {
   // Get value from sensor and print to serial
   // Serial.println("Attempting read temperature...");
   while (ds.selectNext()) {
-    Serial.println(ds.getTempC());
+    ds.setResolution(12);
+  time = millis();
+    Serial.print(ds.getTempC());
+  time = millis() - time;
   }
+  Serial.print(" in ");
+  Serial.print(time);
+  Serial.println(" ms");
   delay(100);
 }
